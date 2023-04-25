@@ -5,5 +5,13 @@ package ejercicios
 // Nota: Se puede usar el algoritmo de Euclides para
 // resolver este problema.
 func MCD(a, b int) int {
-	panic("Not implemented")
+	resto := 0
+	if a == 0 {
+		return b
+	} else if b == 0 {
+		return a
+	} else {
+		resto = a % b
+		return MCD(b, resto)
+	}
 }

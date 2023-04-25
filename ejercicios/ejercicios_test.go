@@ -1,6 +1,7 @@
 package ejercicios
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -37,6 +38,10 @@ func TestEjercicio05(t *testing.T) {
 	pila.Push(3)
 
 	assert.Equal(t, 3, CantidadDeElementos(pila))
+	fmt.Println(pila...)
+	pila.Push(4)
+	assert.Equal(t, 4, CantidadDeElementos(pila))
+	fmt.Println(pila...)
 }
 
 func TestEjercicio06(t *testing.T) {
@@ -82,6 +87,9 @@ func TestEjercicio11(t *testing.T) {
 	assert.True(t, EsPotencia(8, 2))
 	assert.True(t, EsPotencia(1, 2))
 	assert.False(t, EsPotencia(7, 2))
+	assert.True(t, EsPotencia(0, 0))
+	assert.False(t, EsPotencia(0, 2))
+	assert.False(t, EsPotencia(3, 0))
 }
 
 func TestEjercicio12(t *testing.T) {
